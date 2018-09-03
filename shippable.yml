@@ -3,7 +3,7 @@ language: python
 python:
   - 2.7 #.12 
   - 3.7 #.0 
-  - pypy2 #6.0.0 
+  - pypy #6.0.0 
   - pypy3 #6.0.0
   
 build:
