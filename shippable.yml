@@ -3,9 +3,29 @@ language: python
 python:
   - 2.7 #.14
   - 3.7 #.0 
-  - pypy #6.0.0 
-  - pypy3 #6.0.0
+  #- pypy #6.0.0 
+  #- pypy3 #6.0.0
+
+#runtime:
+ # nodePool: dynamic__x86_64__CentOS_7__c4_large
+ # nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+ # nodePool: default_node_pool  
   
+matrix:
+#include this version with the env 
+  include:               
+    - python: pypy 
+      nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+      env: 
+        - M1=ONE  
+        - env1=OneValueFromInclude
+    - python: pypy 
+      nodePool: default_node_pool 
+    - python: pypy3 
+      nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+    - python: pypy3
+      nodePool: default_node_pool  
+        
 build:
     
   ci:
