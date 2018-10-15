@@ -2,6 +2,8 @@ language: python
 
 python:
   - 2.7 #.14
+  - 3.5
+  - 3.6
   - 3.7 #.0 
   #- pypy #6.0.0 
   #- pypy3 #6.0.0
@@ -24,7 +26,12 @@ matrix:
     - python: pypy3 
       nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
     - python: pypy3
-      nodePool: default_node_pool  
+      nodePool: default_node_pool 
+  exclude:             
+    - python: 3.5
+#allows failure for this version
+  allow_failures: 
+    - python: 3.6
         
 build:
     
