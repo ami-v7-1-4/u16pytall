@@ -2,8 +2,8 @@ language: python
 
 python:
   - 2.7 #.14
-  - 3.5
-  - 3.6
+  - 3.5 #this will be excluded
+  - 3.6 #it ll fail but build will pass because of allow_failure
   - 3.7 #.0 
   #- pypy #6.0.0 
   #- pypy3 #6.0.0
