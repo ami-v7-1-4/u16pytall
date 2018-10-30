@@ -45,7 +45,7 @@ build:
     - echo TEST=$TEST
     - echo M1=$M1
     - echo FOO=$FOO
-    - cat env
+    - printenv
     - virtualenv --version #15.1.0
     - docker pull shippabledocker/sample_node_pvt:ecr
     
