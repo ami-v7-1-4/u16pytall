@@ -10,7 +10,6 @@ python:
 
 env:
   - ENV=valueFromEnv
-  - M1=oneFromEnv
   - TEST=bvtFromEnv
   
 runtime:
