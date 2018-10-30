@@ -47,7 +47,7 @@ build:
     - echo FOO=$FOO
     - printenv
     - virtualenv --version #15.1.0
-    - if [ $SHIPPABLE_PYTHON_VERSION == "pypy" && $ENV == "valueFromMatrixIncludeNodeU16" ]; then echo 'success'; else testfail; fi
+    - if [ $SHIPPABLE_PYTHON_VERSION == "pypy" & $ENV == "valueFromMatrixIncludeNodeU16" ]; then echo 'success'; else testfail; fi
     - docker pull shippabledocker/sample_node_pvt:ecr
     
 integrations:
