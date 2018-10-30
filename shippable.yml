@@ -8,8 +8,12 @@ python:
   #- pypy #6.0.0 
   #- pypy3 #6.0.0
 
+env:
+  - ENV=valueFromEnv
+  - M1=oneFromEnv
+  - TEST=bvtFromEnv
+  
 runtime:
-  - nodePool: dynamic__x86_64__CentOS_7__c4_large
   - nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
   - nodePool: default_node_pool  
   
@@ -17,16 +21,15 @@ matrix:
 #include this version with the env 
   include:               
     - python: pypy 
-      nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
+      nodePool: default_node_pool
       env: 
-        - M1=ONE  
-        - env1=OneValueFromInclude
-    - python: pypy 
-      nodePool: default_node_pool 
+        - M1=oneFromMatrixIncludeNodeU16
+        - ENV=valueFromMatrixIncludeNodeU16
+        - FOO=fromMatrixInclude
     - python: pypy3 
-      nodePool: dynamic__x86_64__Ubuntu_14_04__c4_large
-    - python: pypy3
-      nodePool: default_node_pool 
+      nodePool: dynamic__x86_64__CentOS_7__c4_large #not there in runtime but in matrix include
+        - M1=oneFromMatrixIncludeNodeCentOs7
+        - ENV=valueFromMatrixIncludeNodeCentOs7
   exclude:             
     - python: 3.5
 #allows failure for this version
