@@ -28,6 +28,7 @@ matrix:
         - FOO=fromMatrixInclude
     - python: pypy3 
       nodePool: dynamic__x86_64__CentOS_7__c4_large #not there in runtime but in matrix include
+      env:
         - M1=oneFromMatrixIncludeNodeCentOs7
         - ENV=valueFromMatrixIncludeNodeCentOs7
   exclude:             
