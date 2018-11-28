@@ -47,13 +47,13 @@ build:
     - echo FOO=$FOO
     - printenv
     - virtualenv --version #15.1.0
-    - |
-      if [ ! $SHIPPABLE_PYTHON_VERSION == "pypy" && $ENV == "valueFromMatrixIncludeNodeU16" ]; then
-        echo "success"
-        exit 1
-        else
-          testfail        
-      fi
+    #- |
+    #  if [ ! $SHIPPABLE_PYTHON_VERSION == "pypy" && $ENV == "valueFromMatrixIncludeNodeU16" ]; then
+    #    echo "success"
+    #    exit 1
+    #    else
+    #      testfail        
+    #  fi
     #- |
     #  if [ ! -z "$TEST_CACHE" ]; then
     #    . /tmp/cache/cache.sh
