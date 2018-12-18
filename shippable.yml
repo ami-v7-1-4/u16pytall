@@ -31,12 +31,12 @@ matrix:
         - M1=oneFromMatrixIncludeNodeCentOs7
         - ENV=valueFromMatrixIncludeNodeCentOs7
     - python: 3.7
-      nodePool: default_node_pool  
+      nodePool: default_node_pool   
   exclude:             
     - python: 3.5
 #allows failure for this version
   allow_failures: 
-    - python: 3.6
+    - python: 3.6 
         
 build:
     
