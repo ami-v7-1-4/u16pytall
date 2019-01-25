@@ -1,10 +1,10 @@
 language: python
 
 python:
-  - 2.7 #.15
+  - 2.7 #.14
   - 3.5 #this will be excluded
   - 3.6 #it ll fail but build will pass because of allow_failure
-  #- 3.7 #.0 
+  #- 3.7 #.2
   #- pypy #6.0.0 
   - pypy3 #6.0.0
 
@@ -30,7 +30,7 @@ matrix:
       env:
         - M1=oneFromMatrixIncludeNodeCentOs7
         - ENV=valueFromMatrixIncludeNodeCentOs7
-    - python: 3.7
+    - python: 3.7 #.2
       nodePool: default_node_pool   
   exclude:             
     - python: 3.5
@@ -42,13 +42,13 @@ build:
     
   ci:
     - python --version 
-    - pip --version #8.1.2
+    - pip --version #18.1
     - echo ENV=$ENV
     - echo TEST=$TEST
     - echo M1=$M1
     - echo FOO=$FOO
     - printenv
-    - virtualenv --version #15.1.0
+    - virtualenv --version #16.2.0
     #- |
     #  if [ ! $SHIPPABLE_PYTHON_VERSION == "pypy" && $ENV == "valueFromMatrixIncludeNodeU16" ]; then
     #    echo "success"
