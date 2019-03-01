@@ -65,11 +65,3 @@ build:
     #    fi
     #  fi
     #- if [ $SHIPPABLE_PYTHON_VERSION == "pypy" & $ENV == "valueFromMatrixIncludeNodeU16" ]; then echo 'success'; else testfail; fi
-    - docker pull shippabledocker/sample_node_pvt:ecr
-    
-integrations:
-    
-  hub:
- #Docker integration
-    - integrationName: ship-docker
-      type: dockerRegistryLogin
